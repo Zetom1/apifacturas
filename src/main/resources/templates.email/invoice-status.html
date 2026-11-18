@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Actualización de factura</title></head>
+<body style="margin:0;background:#f2f5f8;font-family:Arial,sans-serif;color:#243246">
+<table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="padding:24px 8px;background:#f2f5f8"><tr><td align="center">
+    <table role="presentation" width="600" cellspacing="0" cellpadding="0" style="max-width:600px;width:100%;background:#fff;border-radius:12px;overflow:hidden">
+        <tr><td style="padding:20px 28px;background:#142d4e;text-align:center"><img src="cid:banner" alt="MooCode" style="display:block;max-width:100%;height:auto;margin:auto"></td></tr>
+        <tr><td style="padding:28px">
+            <h1 style="font-size:22px;margin:0 0 16px">Actualización de factura</h1>
+            <p style="line-height:1.6">La factura <strong th:text="${invoiceCode}">FACT-000001</strong> cambió a estado <strong th:text="${status}">TIMBRADA</strong>.</p>
+            <p th:if="${stampingFolio != null}" style="line-height:1.6"><strong>Folio simulado: </strong><span th:text="${stampingFolio}"></span></p>
+            <p th:text="${messageText}" style="line-height:1.6">Tu factura fue actualizada.</p>
+            <p style="font-size:13px;color:#66758a;margin-top:28px">MooCode | Despacho Contable Académico</p>
+        </td></tr>
+    </table>
+</td></tr></table>
+</body>
+</html>

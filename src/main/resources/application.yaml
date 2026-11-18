@@ -1,0 +1,65 @@
+server:
+  port:8080
+
+spring:
+  application:
+    name: apifacturas
+
+datasource:
+  url: jdbc:postgresql://localhost:5432/apifacturas_academico
+  username: apifacturas_alumno
+  password: MooCodeLocal2026!
+  driver-class_name: org.postgresql.Driver
+
+  jpa:
+    open-in-view:false
+  hibernate:
+    ddl-auto: validate
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      password: MooCodeRedis2026
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: correo@gmail.com
+    password: contra
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+  springdoc:
+    swagger-ui:
+      path: /swagger-ui.html
+
+  app:
+    security:
+      jwt:
+        secret: calve generada
+        access-token-minutes: 15
+        refresh-token-hours: 24
+      otp:
+        expiration-minutes: 5
+        max-attempts: 3
+        resend-cooldown-seconds: 60
+      invoice:
+        pdf-directory: ./archivos/facturas
+        simulated:-stamping: true
+      notifications:
+        max-attempts: 3
+        retry-delay-seconds: 60
+
+  logging:
+    level:
+      org.hibernate.SQL: DEBUG
+      org.hibernate.orm.jdbc.bind: TRACE
